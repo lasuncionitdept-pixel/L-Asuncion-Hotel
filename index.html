@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>L’Asuncion Hotel</title>
+
+  <!-- TAB LOGO / FAVICON -->
+  <link rel="icon" type="image/png" href="logo (2).jpg">
+
+  <link rel="stylesheet" href="lasuncion.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <!-- Logo Side -->
+ <div class="container header-content">
+  <div class="logo">
+    <img src="Logo.jpg" alt="L’Asuncion Hotel Logo">
+    <h1>L’Asuncion Hotel</h1>
+  </div>
+
+  <!-- Tabs -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="menu.html">Dining</a></li>
+      <li><a href="#facilities">Facilities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+  </header>
+
+  <!-- Home Tab -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Welcome to L’Asuncion Hotel</h2>
+      <p>Your perfect getaway awaits.</p>
+      <button class="btn" id="bookNowBtn">Book Now</button>
+    </div>
+  </section>
+
+  <!-- Room Tab -->
+  <section id="rooms" class="rooms">
+    <div class="container">
+      <h2>Our Rooms</h2>
+      <div class="room">
+        <img src="room1.jpg" alt="Room 1" class="room-img" data-room="deluxe" />
+        <div>
+          <h3>Deluxe Room</h3>
+          <p>Spacious and luxurious, perfect for relaxation.</p>
+          <span>Starting at ₱4,225/night</span>
+        </div>
+      </div>
+      <div class="room">
+        <img src="room2.jpg" alt="Room 2" class="room-img" data-room="executive" />
+        <div>
+          <h3>Premier Room</h3>
+          <p>Elegant and modern, ideal for business travelers.</p>
+          <span>Starting at ₱4,550/night</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dining Tab -->
+  <section id="dining" class="dining">
+    <div class="container">
+      <h2>Dining</h2>
+      <div class="restaurant">
+        <h3>Mommy Ching's Restaurant</h3>
+        <p>Enjoy exquisite cuisine prepared by our talented chefs.</p>
+        <a href="menu.html" class="btn">View Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilites Tab -->
+  <section id="facilities" class="facilities">
+    <div class="container">
+      <h2>Facilities</h2>
+      <div class="facility" data-facility="skybar">
+        <h3 class="facility-link" style="cursor:pointer; color:#e74c3c;">Sky Bar</h3>
+        <p>Where stunning views, meet great vibes and unforgettable nights!</p>
+      </div>
+      <div class="facility" data-facility="functionhall">
+        <h3 class="facility-link" style="cursor:pointer; color:#e74c3c;">Function Hall</h3>
+        <p>Ready for anything — from fun parties and weddings to meetings and conferences!</p>
+      </div>
+      <div class="facility" data-facility="juniorballroom">
+        <h3 class="facility-link" style="cursor:pointer; color:#e74c3c;">Junior Ballroom</h3>
+        <p>Where Young Stars Shine — Perfect for Dance, Play, and Special Days!</p>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <p class="footer-copy">&copy; 2025 L'Asuncion Hotel</p>
+      <p>All rights reserved.</p>
+      <p class="footer-credit">Credit: Eljon James (IT)</p>
+    </div>
+
+    <div class="footer-column">
+      <p><strong>Email:</strong> lasuncion@gmail.com</p>
+      <p><strong>Phone:</strong> 0917-155-8937</p>
+      <p><strong>Address:</strong> Magsaysay St., Baybay City, Leyte</p>
+    </div>
+
+    <div class="footer-column">
+      <p class="footer-title">Follow Us</p>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Booking Form</h2>
+      <form id="bookingForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="email">Email Contact:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+        <label for="number">Phone Number:</label>
+        <input type="number" id="number" name="number" placeholder="Your Number" required />
+
+        <label for="checkin">Check In:</label>
+        <input type="date" id="checkin" name="checkin" required />
+
+        <label for="time">Check In Time:</label>
+        <input type="time" id="time" name="time" required />
+
+        <label for="checkout">Check Out:</label>
+        <input type="date" id="checkout" name="checkout" required />
+
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType" required>
+          <option value="" disabled selected>Select a room</option>
+          <option value="deluxe" data-price="4225">Deluxe Room - ₱4,225/night</option>
+          <option value="executive" data-price="4550">Executive Suite - ₱4,550/night</option>
+        </select>
+
+        <div id="totalContainer">
+          <strong>Total Price: ₱<span id="totalPrice">0</span></strong>
+        </div>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Room Detail Modal -->
+  <div id="roomModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeRoomModal">&times;</span>
+      <div class="room-gallery"></div>
+      <div class="room-description"></div>
+    </div>
+  </div>
+
+  <!-- Facility Detail Modal -->
+  <div id="facilityModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeFacilityModal">&times;</span>
+      <div class="facility-gallery"></div>
+      <div class="facility-description" style="margin-top: 15px; font-size: 1.1rem;"></div>
+    </div>
+  </div>
+
+  <script src="1lasuncion.js"></script>
+</body>
+</html>
